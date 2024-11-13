@@ -1,8 +1,8 @@
 package com.pluralsight;
 
-public class DefaultTopping {
+public class DefaultTopping extends Topping{
     public DefaultTopping(String nameOfDefaultTopping) {
-        super(nameOfDefaultTopping);
+        super(nameOfDefaultTopping);//dont do this no more
     }
 
 
