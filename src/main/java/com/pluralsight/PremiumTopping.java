@@ -5,8 +5,8 @@ package com.pluralsight;
 
 public class PremiumTopping extends Topping{
     private String premiumType;
-    private double extraPremiumTopping;
-    public PremiumTopping(String nameOfPremiumTopping, String sandwichSize, String premiumType) {
+    private double totalPremiumTopping = 0;
+    public PremiumTopping(String sandwichSize, String nameOfPremiumTopping, String premiumType) {
         super(nameOfPremiumTopping);
         this.premiumType = premiumType;
     }
@@ -73,7 +73,13 @@ public class PremiumTopping extends Topping{
                 break;
         }
         //isExtra will b
+    if(isExtra) {
+        this.totalPremiumTopping = extraCost;
+    } else {
+        this.totalPremiumTopping = baseCost;
+    }
         return isExtra ? baseCost + extraCost : baseCost;
+
     }
 
 
@@ -91,6 +97,11 @@ public class PremiumTopping extends Topping{
 //                return 1.00;
 //        }
 //    }
+
+    public double getTotalPremiumTopping() {
+        return totalPremiumTopping;
+    }
+
     public String getPremiumType() {
         return premiumType;
     }

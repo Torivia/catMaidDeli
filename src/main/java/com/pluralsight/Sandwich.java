@@ -8,9 +8,11 @@ public class Sandwich {
     private String sandwichSize;
     private boolean isToasted;
     private List<Topping> toppings;
-    private List<Topping> sauces = new ArrayList<>();
-    private List<Topping> sides = new ArrayList<>();
+    private List<Sauces> sauces;
+    private List<Sides> sides;
     private List<Boolean> isExtraList;
+    private List<Topping> extras;
+    private double totalCostOfSandwich;
 
 
     public Sandwich(String breadType, String sandwichSize, boolean isToasted, List<Topping> toppings) {
@@ -21,14 +23,22 @@ public class Sandwich {
         this.isExtraList = new ArrayList<>();
         this.sauces = new ArrayList<>();
         this.sides = new ArrayList<>();
+        this.extras = new ArrayList<>();
     }
     public void addTopping(Topping topping, boolean isExtra) {
         toppings.add(topping);
         isExtraList.add(isExtra);
     }
 
-    public void addSauce(Sauces sauce) {}
-
+    public String getSandwichSize() {
+        return sandwichSize;
+    }
+    public void addSauce(Sauces sauce) {
+        sauces.add(sauce);
+    }
+    public void addSide(Sides side) {
+        sides.add(side);
+    }
     public void addToppingByName(String nameOfTopping) {
         boolean isExtra = false;
         //in order to determine whether the topping has already been added to the order
@@ -51,8 +61,12 @@ public class Sandwich {
             System.out.println("hmm...sorry, we don't serve " + nameOfTopping + " here :c");
             return;
         }
+
         addTopping(topping, isExtra);
 
+    }
+    public void addExtraToppings(Topping topping) {
+        extras.add(topping);
     }
 
 //    public double calculateTotalToppingsCost() {
@@ -71,17 +85,7 @@ public class Sandwich {
 //        }
 //        return total;
 //    }
-//    public double calculateTotalSandwich () {
-//        double totalPrice = basePrice;
-//        for (Topping topping : toppings)
-//    }
-    public double getTotalCost() {
-        double totalPrice = basePrice;
-        for (Topping topping : toppings) {
-            totalPrice += topping.getPrice();
-        }
-
-        return totalPrice;
-
+    public double getTotalCostOfSandwich () {
+        return totalCostOfSandwich;
     }
 }

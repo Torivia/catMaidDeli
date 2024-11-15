@@ -43,7 +43,7 @@ public class Order {
     private double getTotalCost() {
         totalCost = 0;
         for (Sandwich sandwich : sandwiches) {
-            totalCost += sandwich.getTotalCost();//make method
+            totalCost += sandwich.getTotalCostOfSandwich();//make method
         } for (Drink drink : drinks) {
             totalCost += drink.getCostOfDrink();
         } for (Chips chip : chips) {
@@ -65,20 +65,20 @@ public class Order {
         for (Chips chip : chips) {
             stringBuilder.append(chip.toString()).append("\n");
         }
-        stringBuilder.append("Your total!: $").append(TotalCost.calculateTotal(this)).append("\n");
+        stringBuilder.append("Your total!: $").append(calculateTotal(this)).append("\n");
         return stringBuilder.toString();
     }
     public static double calculateTotal(Order order) {
         double total = 0.0;
 
         for (Sandwich sandwich : order.getSandwiches()) {
-            total += sandwich.getPrice(); // Sandwich has a getPrice() method
+            total += sandwich.getTotalCostOfSandwich();
         }
         for (Drink drink : order.getDrinks()) {
-            total += drink.getPrice();
+            total += drink.getCostOfDrink();
         }
         for (Chips chip : order.getChips()) {
-            total += chip.getPrice();
+            total += chip.getCostOfChips();
         }
         return total;
     }

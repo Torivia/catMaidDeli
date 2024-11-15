@@ -1,7 +1,12 @@
 package com.pluralsight;
 import org.w3c.dom.ls.LSOutput;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Scanner;
 
 //IMPORTANT: remember teachers feedback, make sure to add "break;" after switch cases.
@@ -15,9 +20,9 @@ public class OrderScreen {
             System.out.println("Welcome to the maid cafe >_o!~ \n" +
                     "Let's start you off with an order :3\n" +
                     "1) New Order! omnomnomnom ^7^\n" +
-                    "0) Exit :c\n");
+                    "0) Exit :c");
             int choice = scanner.nextInt();
-            switch (choice)  {
+            switch (choice) {
                 case 1:
                     actualOrderNumber += 1;
                     OrderNumber orderNumber = addOrder(actualOrderNumber);
@@ -33,6 +38,7 @@ public class OrderScreen {
     }
 
     public OrderNumber addOrder(int actualOrderNumber) {
+        scanner.nextLine();
         System.out.println("May I take your name? :3");
         String nameOfCustomer = scanner.nextLine();
         System.out.println("Thanks, " + nameOfCustomer + " :D!");
@@ -40,6 +46,7 @@ public class OrderScreen {
         OrderNumber newOrder = new OrderNumber(actualOrderNumber, nameOfCustomer);
         return newOrder;
     }
+
     public void displayOrderScreen() {
         int choice;
         do {
@@ -90,7 +97,7 @@ public class OrderScreen {
                 "2) 8\"\n" +
                 "3) 12\"\n");
         choice = scanner.nextInt();
-        while(true) {
+        while (true) {
             switch (choice) {
                 case 1:
                     sandwichSizeForThisOrder = "4\"";
@@ -105,14 +112,15 @@ public class OrderScreen {
                     System.out.println("That's not an option, sorry!");
                     choice = scanner.nextInt(); // Prompt for a valid choice
                     continue;
-            } break;
+            }
+            break;
         }
 
         System.out.println("Great choice :D! What kind of bread type would you like?\n" +
                 "1)White\n" +
                 "2)Wheat\n" +
                 "3)Rye\n" +
-                "4)Wrap\n");
+                "4)Wrap");
         choice = scanner.nextInt();
         switch (choice) {
             case 1:
@@ -132,62 +140,136 @@ public class OrderScreen {
                 breadTypeForThisOrder = "White";
                 break;
         }
-        System.out.println("Would you like your sandwich toasted?" +
-                "1) Yep!" +
+        System.out.println("Would you like your sandwich toasted?\n" +
+                "1) Yep!\n" +
                 "0) Nope!");
         choice = scanner.nextInt();
         isToasted = (choice == 1);
 
         Sandwich sandwich = new Sandwich(breadTypeForThisOrder, sandwichSizeForThisOrder, isToasted, new ArrayList<>());
 
-        scanner.nextLine();
 
         do {
             System.out.println("Would you like to add meat?\n" +
                     "Steak\n" +
-                    "Ham\n"+
+                    "Ham\n" +
                     "Salami\n" +
-                    "Roast beef\n"+
-                    "Chicken\n"+
+                    "Roast beef\n" +
+                    "Chicken\n" +
                     "Bacon\n" +
                     "1) Yep!\n" +
-                    "2) Nope!");
+                    "0) Nope!");
             //user input goes here v
             choice = scanner.nextInt();
+            scanner.nextLine();
             switch (choice) {
                 case 1:
-                    int extraCheck;
+                    scanner.nextLine();
                     System.out.println("Okay! please type in what you would like. :D");
                     String meatChoice = scanner.nextLine();
+                    PremiumTopping topping = new PremiumTopping(meatChoice, sandwichSizeForThisOrder, "Meat");
                     sandwich.addToppingByName(meatChoice);
+                    scanner.nextLine();
                     //use additional charge here
-                    System.out.println("emm...I'm so sorry...I kinda forgot if this was an extra or not...is it?--ah but p-please don't lie ;_;!! I don't wanna get fireeed!! T^T\n" +
-                            "1) Yes, I'm not lying\n" +
-                            "0) No, truly :3");
-                    extraCheck = scanner.nextInt();
-                    boolean isItReallyExtra = (extraCheck == 1);
+                    System.out.println("and would you like to add extra meat to that? ^_^\n" +
+                            "1) Yep!\n" +
+                            "0) Nope!\n");
+                    int doYouWantExtra = scanner.nextInt();
+                    if (doYouWantExtra == 1) {
+                        double extraCharge = topping.additionalCharge(sandwich.getSandwichSize(), "Meat", true);
+                        sandwich.addExtraToppings(topping); //Add to extras
+                        System.out.println("Added " + " with extra charge: $" + extraCharge);
 
-                    PremiumTopping premiumTopping = new PremiumTopping(meatChoice, sandwichSizeForThisOrder, "Meat");
-                    premiumTopping.additionalCharge(meatChoice, sandwichSizeForThisOrder, isItReallyExtra);
-                    System.out.println("beep boop beep boop :p I did the math! your total will come up to...: ");
+                    }
+                    //PremiumTopping premiumTopping = new PremiumTopping(meatChoice, sandwichSizeForThisOrder, "Meat");
+                    break;
                 case 0:
                     System.out.println("Okey dokey :D!");
+                    break;
             }
         } while (choice != 0);
 
 
+        System.out.println("Would you like any of these cheeses?\n" +
+                "swiss\n" +
+                "american\n" +
+                "provolone\n" +
+                "cheddar\n" +
+                "1) Yes\n" +
+                "0) No");
+        choice = scanner.nextInt();
 
-        System.out.println("What kind of cheese(s) would you like?\n"
-                //add cheeses
-                );
+        switch (choice) {
+            case 1:
+                scanner.nextLine();
+                System.out.println("Okay! please type in what you would like. :D");
+                String cheeseChoice = scanner.nextLine();
+                PremiumTopping topping = new PremiumTopping(cheeseChoice, sandwichSizeForThisOrder, "Cheese");
+                sandwich.addToppingByName(cheeseChoice);
+                scanner.nextLine();
+                //use additional charge here
+                System.out.println("and would you like to add extra cheese to that? ^_^ \n" +
+                        "1) Yep!\n" +
+                        "0) Nope!");
+                int doYouWantExtra = scanner.nextInt();
+                if (doYouWantExtra == 1) {
+                    double extraCharge = topping.additionalCharge(sandwich.getSandwichSize(), "Cheese", true);
+                    sandwich.addExtraToppings(topping); //Add to extras
+                    System.out.println("Added " + " with extra charge: $" + extraCharge);
+                } else {
+                    System.out.println("Okay :D");
+                }
+                break;
+            case 0:
+                System.out.println("Okey dokey :D!");
+                break;
+        } while (choice !=0);
+
         //switch statement here
-        System.out.println("What regular toppings would you like?\n"
-                //add regular toppings here
-                );
+        System.out.println("What regular toppings would you like?\n"+
+                "lettuce\n" +
+                "peppers\n" +
+                "onions\n" +
+                "tomatoes\n" +
+                "jalapenos\n" +
+                "cucumbers\n" +
+                "pickles\n" +
+                "guacamole\n" +
+                "mushrooms" +
+                "1) Yes" +
+                "0) No");
+        choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                scanner.nextLine();
+                System.out.println("Okay! please type in what you would like. :D");
+                String regularChoice = scanner.nextLine();
+                sandwich.addToppingByName(regularChoice);
+                break;
+            case 0:
+                System.out.println("Okey dokey :D!");
+                break;
+        } while(choice !=0);
         //switch statement here
-        System.out.println("What kind of sauce(s) would you like?\n"
-                //sauces here
-                );
+        System.out.println("What kind of sauce(s) would you like?\n" +
+                "mayo\n" +
+                "mustard\n" +
+                "ketchup\n" +
+                "ranch\n" +
+                "thousand islands\n" +
+                "vinaigrette");
+        choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                scanner.nextLine();
+                System.out.println("Okay! please type in what you would like. :D");
+                String sauceChoice = scanner.nextLine();
+                sandwich.addToppingByName(sauceChoice);
+                break;
+            case 0:
+                System.out.println("Okey dokey :D!");
+                break;
+        } while(choice !=0);
         //switch statement here
 
         //use switch/if statement to make sure they dont name anything that's unavailable.
@@ -245,7 +327,7 @@ public class OrderScreen {
             checkoutChoice = scanner.nextInt();
             switch (checkoutChoice) {
                 case 1:
-                    currentOrder.saveReceipt();
+                    receipt(currentOrder);
                     System.out.println("Thank you for ordering here >_< have a great day :3!!!");
 
 
@@ -255,7 +337,89 @@ public class OrderScreen {
                     break;
             }
         } while (checkoutChoice != 0);
+    }
+        private void receipt(Order order) {
+            String folderName = "receipts";
+            File folder = new File(folderName);
+            if (!folder.exists()) {
+                folder.mkdir();
+            }
+            String fileName = folderName + "/" + new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date()) + ".txt";
+            try (FileWriter writer = new FileWriter(fileName)) {
+                writer.write(order.toString()); // Assuming your Order class has a meaningful toString() method
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    public double additionalCharge(String sandwichSize, String premiumType, boolean isExtra) {
+        double baseCost = 0.0;
+        double extraCost = 0.0;
 
+        boolean addExtraCost = isExtra;
+
+        switch (sandwichSize) {
+            case "4\"":
+                //condition ? value_if_true : value_if_false
+                if (premiumType.equals("Meat")) {
+                    if (addExtraCost) {
+                        baseCost = 1.00;
+                    } else {
+                        extraCost = 0.50;
+                    }
+                } else if (premiumType.equals("Cheese")) {
+                    if (addExtraCost) {
+                        baseCost = 0.75;
+                    } else {
+                        extraCost = 0.30;
+                    }
+                }
+                break;
+            case "8\"":
+                if (premiumType.equals("Meat")) {
+                    if (addExtraCost) {
+                        baseCost = 2.00;
+                    } else {
+                        extraCost = 1.00;
+                    }
+                } else if (premiumType.equals("Cheese")) {
+                    if (addExtraCost) {
+                        baseCost = 1.50;
+                    } else {
+                        extraCost = 0.60;
+                    }
+                }
+                break;
+            case "12\"":
+                if (premiumType.equals("Meat")) {
+                    if (addExtraCost) {
+                        baseCost = 3.00;
+                    } else {
+                        extraCost = 1.50;
+                    }
+                } else if (premiumType.equals("Cheese")) {
+                    if (addExtraCost) {
+                        baseCost = 2.25;
+                    } else {
+                        extraCost = 0.90;
+                    }
+                }
+                break;
+            default:
+                if (addExtraCost) {
+                    baseCost = 1.00;
+                } else {
+                    extraCost = 0.50;
+                }
+                break;
+        }
+        //isExtra will b
+//        if(isExtra) {
+//            total += extraCost;
+//        } else {
+//            total += baseCost;
+//        }
+        return isExtra ? baseCost + extraCost : baseCost;
 
     }
-}
+    }
+
