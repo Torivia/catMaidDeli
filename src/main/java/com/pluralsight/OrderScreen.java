@@ -330,7 +330,7 @@ public class OrderScreen {
                     receipt(currentOrder);
                     System.out.println("Thank you for ordering here >_< have a great day :3!!!");
 
-
+//ss
                     //IMPORTANT:find out how you're gonna end the code here
                 case 0:
                     System.out.println("silly goose :3");
