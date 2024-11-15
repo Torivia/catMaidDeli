@@ -12,12 +12,12 @@ public class Drink {
     public double getCostOfDrink(String sizeOfDrink) {
         switch (sizeOfDrink) {
             case "Small":
-                return 2.00;
+                costOfDrink = 2.00;
             case "Medium":
-                return 2.50;
+                costOfDrink = 2.50;
             case "Large":
-                return 3.00;
+                costOfDrink = 3.00;
         }
-        //missing return statement
+        return costOfDrink;
     }
 }

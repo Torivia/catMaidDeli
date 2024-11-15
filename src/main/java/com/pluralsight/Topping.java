@@ -12,7 +12,7 @@ public interface class Topping {
         this.costOfTopping = costOfTopping;
     }
 
-    public double additionalCharge(String sandwichSize, double ) {
+    public double additionalCharge(String sandwichSize, String premiumType, boolean isExtra) {
         return 5.5;
     }
 

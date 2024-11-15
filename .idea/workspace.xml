@@ -4,18 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="deae9907-a140-47f4-b0e9-31668ecf01ab" name="Changes" comment="Added Base Classes&#10;I have a lot of errors, fixable">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/ToppingDatabase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/res/ai-generated-8700073_640.webp" afterDir="false" />
+    <list default="true" id="deae9907-a140-47f4-b0e9-31668ecf01ab" name="Changes" comment="fixed small mistakes, changed some classes' types&#10;I still need to add code for certain methods, trying to progress on my personal challenge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/DefaultTopping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/DefaultTopping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Drink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/OrderScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/OrderScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/PopUpManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/PopUpManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/PremiumTopping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/PremiumTopping.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sandwich.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Topping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Topping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/ToppingDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/ToppingDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/UI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/res/ai-generated-8700073_640.webp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +31,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Torivia"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Torivia/catMaidDeli.git",
+    "accountId": "a22a9718-71a5-4a4d-a3ed-293e66ebdc47"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -77,11 +88,20 @@
       <option name="project" value="LOCAL" />
       <updated>1731436613386</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fixed small mistakes, changed some classes' types&#10;I still need to add code for certain methods, trying to progress on my personal challenge">
+      <option name="closed" value="true" />
+      <created>1731521411691</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731521411692</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Base Classes&#10;I have a lot of errors, fixable" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Base Classes&#10;I have a lot of errors, fixable" />
+    <MESSAGE value="fixed small mistakes, changed some classes' types&#10;I still need to add code for certain methods, trying to progress on my personal challenge" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed small mistakes, changed some classes' types&#10;I still need to add code for certain methods, trying to progress on my personal challenge" />
   </component>
 </project>

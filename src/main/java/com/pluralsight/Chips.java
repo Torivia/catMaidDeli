@@ -11,4 +11,7 @@ public class Chips {
     public double getCostOfChips() {
         return costOfChips;
     }
+    public String getFlavorOfChips() {
+        return flavorOfChips;
+    }
 }

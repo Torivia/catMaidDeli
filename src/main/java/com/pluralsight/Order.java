@@ -8,6 +8,7 @@ public class Order {
     private ArrayList<Drink> drinks = new ArrayList<>();
     private ArrayList<Chips> chips = new ArrayList<>();
     private double totalCost;
+    private OrderNumber orderNumber;
 
     public void addSandwich(Sandwich sandwich) {
         sandwiches.add(sandwich);

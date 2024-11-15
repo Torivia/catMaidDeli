@@ -5,25 +5,34 @@ import java.util.List;
 
 public class ToppingDatabase {
     //constants
-    public static final List<String> DEFAULT_TOPPINGS = Arrays.asList("lettuce\n" +
-            "peppers\n",
-            "onions\n",
-            "tomatoes\n",
-            "jalepenos\n",
-            "cucumbers\n",
-            "pickles\n",
-            "guacamole\n",
+    public static final List<String> DEFAULT_TOPPINGS = Arrays.asList("lettuce",
+            "peppers",
+            "onions",
+            "tomatoes",
+            "jalapenos",
+            "cucumbers",
+            "pickles",
+            "guacamole",
             "mushrooms");
-    public static final List<String> PREMIUM_MEAT_TOPPINGS = Arrays.asList("steak\n",
-            "ham\n",
-            "salami\n",
-            "roast beef\n",
-            "chicken\n",
-            "bacon\n");
-    public static final List<String> PREMIUM_CHEESE_TOPPINGS = Arrays.asList("swiss\n",
-            "american\n",
-            "provolone\n",
-            "cheddar\n");
+    public static final List<String> SAUCE_TOPPINGS = Arrays.asList("mayo",
+            "mustard",
+            "ketchup",
+            "ranch",
+            "thousand islands",
+            "vinaigrette");
+    public static final List<String> SIDES = Arrays.asList("sauce",
+            "au jus");
+
+    public static final List<String> PREMIUM_MEAT_TOPPINGS = Arrays.asList("steak",
+            "ham",
+            "salami",
+            "roast beef",
+            "chicken",
+            "bacon");
+    public static final List<String> PREMIUM_CHEESE_TOPPINGS = Arrays.asList("swiss",
+            "american",
+            "provolone",
+            "cheddar");
 
     //how to check if topping is premium..MAKE A METHOD
     public static boolean isPremiumTopping(String nameOfTopping) {

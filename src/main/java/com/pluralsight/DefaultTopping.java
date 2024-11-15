@@ -7,7 +7,7 @@ public class DefaultTopping extends Topping{
 
 
     @Override
-    public double additionalCharge(String sandwichSize) {
+    public double additionalCharge(String sandwichSize, String premiumType, boolean isExtra) {
         return 0.0;
         }
     }

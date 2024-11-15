@@ -1,4 +1,5 @@
 package com.pluralsight;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 //IMPORTANT: remember teachers feedback, make sure to add "break;" after switch cases.
@@ -45,7 +46,85 @@ public class OrderScreen {
 
     //add sandwich :3
     public void processAddSandwich() {
+        int choice;
+        String sandwichSizeForThisOrder;
+        String breadTypeForThisOrder;
+        ArrayList<Topping> meatToppingListForThisOrder = new ArrayList<>();
+        ArrayList<Topping> cheeseToppingListForThisOrder = new ArrayList<>();
+        ArrayList<Topping> regularToppingListForThisOrder = new ArrayList<>();
+        ArrayList<Topping> sauceToppingListForThisOrder = new ArrayList<>();
+        ArrayList<Topping> sideListForThisOrder = new ArrayList<>();
         //ask questions here about what the user would want!
+        System.out.println("Yum, okay! And what size would you like for this sandwich to be?\n" +
+                "1) 4\"\n" +
+                "2) 8\"\n" +
+                "3) 12\"\n");
+        choice = scanner.nextInt();
+        while(true) {
+            switch (choice) {
+                case 1:
+                    sandwichSizeForThisOrder = "4\"";
+                    break;
+                case 2:
+                    sandwichSizeForThisOrder = "8\"";
+                    break;
+                case 3:
+                    sandwichSizeForThisOrder = "12\"";
+                    break;
+                default:
+                    System.out.println("That's not an option, sorry!");
+                    choice = scanner.nextInt(); // Prompt for a valid choice
+                    continue;
+            } break;
+        }
+
+        System.out.println("Great choice :D! What kind of bread type would you like?\n" +
+                "1)White\n" +
+                "2)Whea\nt" +
+                "3)Rye\n" +
+                "4)Wrap\n");
+        choice = scanner.nextInt();
+        switch (choice) {
+            case 1:
+                breadTypeForThisOrder = "White";
+                break;
+            case 2:
+                breadTypeForThisOrder = "Wheat";
+                break;
+            case 3:
+                breadTypeForThisOrder = "Rye";
+                break;
+            case 4:
+                breadTypeForThisOrder = "Wrap";
+                break;
+            default:
+                System.out.println("That's not an option, defaulting to 'White'.");
+                breadTypeForThisOrder = "White";
+                break;
+        }
+
+        //add switch statement here
+        System.out.println("What kind of meat(s) would you like?\n" +
+                "1)Steak\n" +
+                "2)Ham\n"+
+                "3)Salami\n" +
+                "4)Roast beef\n"+
+                "5)Chicken\n"+
+                "6)Bacon\n");
+        //switch statement here
+        System.out.println("What kind of cheese(s) would you like?\n" +
+                //add cheeses here
+                );
+        //switch statement here
+        System.out.println("What regular toppings would you like?\n" +
+                //add regular toppings here
+                );
+        //switch statement here
+        System.out.println("What kind of sauce(s) would you like?\n" +
+                //sauces here
+                );
+        //switch statement here
+
         //use switch/if statement to make sure they dont name anything that's unavailable.
     }
 
