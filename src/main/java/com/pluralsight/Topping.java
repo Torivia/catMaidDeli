@@ -1,24 +1,19 @@
 package com.pluralsight;
 
-public interface class Topping {
+public class Topping {
     protected String nameOfTopping;
-    protected double costOfTopping;
 
-    public Topping(String nameOfTopping, String sandwichSize) {
+
+    public Topping(String nameOfTopping) {
         this.nameOfTopping = nameOfTopping;
     }
 
-    public void setCostOfTopping(double costOfTopping) {
-        this.costOfTopping = costOfTopping;
-    }
-
     public double additionalCharge(String sandwichSize, String premiumType, boolean isExtra) {
-        return 5.5;
+        return 5.5; //no
     }
 
     public String getNameOfTopping() {
         return nameOfTopping;
     }
-    //IMPORTANT: There is no getter here for costOfTopping
 }
 

@@ -2,22 +2,18 @@ package com.pluralsight;
 
 public class Drink {
     private String flavorOfDrink;
-    private String sizeOfDrink;
+
     private double costOfDrink;
 
-    public Drink(String flavorOfDrink, String sizeOfDrink) {
+    public Drink(String flavorOfDrink, double priceOfDrink) {
         this.flavorOfDrink = flavorOfDrink;
-        this.sizeOfDrink = sizeOfDrink;
+        this.costOfDrink = priceOfDrink;
     }
-    public double getCostOfDrink(String sizeOfDrink) {
-        switch (sizeOfDrink) {
-            case "Small":
-                costOfDrink = 2.00;
-            case "Medium":
-                costOfDrink = 2.50;
-            case "Large":
-                costOfDrink = 3.00;
-        }
+    public double getCostOfDrink() {
         return costOfDrink;
+    }
+    @Override
+    public String toString(){
+        return "Drink: " + flavorOfDrink + ", $" + costOfDrink;
     }
 }

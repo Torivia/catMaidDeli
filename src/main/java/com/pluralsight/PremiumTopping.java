@@ -9,46 +9,67 @@ public class PremiumTopping extends Topping{
     public PremiumTopping(String nameOfPremiumTopping, String sandwichSize, String premiumType) {
         super(nameOfPremiumTopping);
         this.premiumType = premiumType;
-        this.extraPremiumTopping = additionalCharge(sandwichSize, premiumType);
-
     }
 @Override
-    private double additionalCharge(String sandwichSize, String premiumType, boolean isExtra) {
+    public double additionalCharge(String sandwichSize, String premiumType, boolean isExtra) {
         double baseCost = 0.0;
         double extraCost = 0.0;
+
+        boolean addExtraCost = isExtra;
 
         switch (sandwichSize) {
             case "4\"":
                 //condition ? value_if_true : value_if_false
                 if (premiumType.equals("Meat")) {
-                    baseCost = 1.00;
+                    if (addExtraCost) {
+                        baseCost = 1.00;
+                    } else {
                     extraCost = 0.50;
+                    }
                 } else if (premiumType.equals("Cheese")) {
-                    baseCost = 0.75;
-                    extraCost = 0.30;
+                    if (addExtraCost) {
+                        baseCost = 0.75;
+                    } else {
+                        extraCost = 0.30;
+                    }
                 }
                 break;
             case "8\"":
                 if (premiumType.equals("Meat")) {
-                    baseCost = 2.00;
-                    extraCost = 1.00;
+                    if (addExtraCost) {
+                        baseCost = 2.00;
+                    } else {
+                        extraCost = 1.00;
+                    }
                 } else if (premiumType.equals("Cheese")) {
-                    baseCost = 1.50;
-                    extraCost = 0.60;
+                    if (addExtraCost) {
+                        baseCost = 1.50;
+                    } else {
+                        extraCost = 0.60;
+                    }
                 }
                 break;
             case "12\"":
                 if (premiumType.equals("Meat")) {
-                    baseCost = 3.00;
-                    extraCost = 1.50;
+                    if (addExtraCost) {
+                        baseCost = 3.00;
+                    } else {
+                        extraCost = 1.50;
+                    }
                 } else if (premiumType.equals("Cheese")) {
-                    baseCost = 2.25;
-                    extraCost = 0.90;
+                    if (addExtraCost) {
+                        baseCost = 2.25;
+                    } else {
+                        extraCost = 0.90;
+                    }
                 }
                 break;
             default:
-                baseCost = 1.00;
+                if (addExtraCost) {
+                    baseCost = 1.00;
+                } else {
                 extraCost = 0.50;
+                }
                 break;
         }
         //isExtra will b

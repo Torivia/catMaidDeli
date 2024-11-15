@@ -1,23 +1,33 @@
 package com.pluralsight;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Sandwich {
     private String breadType;
     private String sandwichSize;
     private boolean isToasted;
-    private ArrayList<Topping> toppings = new ArrayList<>();
-    private ArrayList<Boolean> isExtraList = new ArrayList<>();
+    private List<Topping> toppings;
+    private List<Topping> sauces = new ArrayList<>();
+    private List<Topping> sides = new ArrayList<>();
+    private List<Boolean> isExtraList;
 
-    public Sandwich(String breadType, String sandwichSize, boolean isToasted) {
+
+    public Sandwich(String breadType, String sandwichSize, boolean isToasted, List<Topping> toppings) {
         this.breadType = breadType;
         this.sandwichSize = sandwichSize;
         this.isToasted = isToasted;
+        this.toppings = toppings;
+        this.isExtraList = new ArrayList<>();
+        this.sauces = new ArrayList<>();
+        this.sides = new ArrayList<>();
     }
     public void addTopping(Topping topping, boolean isExtra) {
         toppings.add(topping);
         isExtraList.add(isExtra);
     }
+
+    public void addSauce(Sauces sauce) {}
 
     public void addToppingByName(String nameOfTopping) {
         boolean isExtra = false;
@@ -42,23 +52,36 @@ public class Sandwich {
             return;
         }
         addTopping(topping, isExtra);
+
     }
 
-    public double calculateTotalToppingsCost() {
-        //calculate cost based on size and toppings
-
-        double total = 0.0;
-        for (int i = 0; i < toppings.size(); i++) {
-            Topping topping = toppings.get(i);
-            boolean isExtra = isExtraList.get(i);
-
-            if (topping instanceof PremiumTopping) {
-                total += ((PremiumTopping) topping).additionalCharge(sandwichSize, isExtra);
-            } else {
-                total += topping.additionalCharge(sandwichSize);
-            }
+//    public double calculateTotalToppingsCost() {
+//        //calculate cost based on size and toppings
+//
+//        double total = 0.0;
+//        for (int i = 0; i < toppings.size(); i++) {
+//            Topping topping = toppings.get(i);
+//            boolean isExtra = isExtraList.get(i);
+//
+//            if (topping instanceof PremiumTopping) {
+//                total += ((PremiumTopping) topping).additionalCharge(sandwichSize, premiumType, isExtra);
+//            } else {
+//                total += topping.additionalCharge(sandwichSize);
+//            }
+//        }
+//        return total;
+//    }
+//    public double calculateTotalSandwich () {
+//        double totalPrice = basePrice;
+//        for (Topping topping : toppings)
+//    }
+    public double getTotalCost() {
+        double totalPrice = basePrice;
+        for (Topping topping : toppings) {
+            totalPrice += topping.getPrice();
         }
-        return total;
+
+        return totalPrice;
+
     }
-//    public double calculateTotalSandwich ()
 }

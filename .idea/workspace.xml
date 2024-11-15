@@ -4,17 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="deae9907-a140-47f4-b0e9-31668ecf01ab" name="Changes" comment="fixed small mistakes, changed some classes' types&#10;I still need to add code for certain methods, trying to progress on my personal challenge">
+    <list default="true" id="deae9907-a140-47f4-b0e9-31668ecf01ab" name="Changes" comment="Added methods for most of these classes&#10;I realized im repeating a lot of methods so that will be my next goal">
+      <change afterPath="$PROJECT_DIR$/receipts/20241114-153244.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/receipts/20241114-153335.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/receipts/20241114-153355.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/receipts/20241114-154816.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/receipts/20241114-155250.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/receipts/20241114-155536.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/receipts/20241114-160048.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sauces.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sides.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/DefaultTopping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/DefaultTopping.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Chips.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Chips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Drink.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/HomeScreen.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/OrderScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/OrderScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/PopUpManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/PopUpManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/PopUpManager.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/PremiumTopping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/PremiumTopping.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sandwich.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/SandwichOrder.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Topping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Topping.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/ToppingDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/ToppingDatabase.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/UI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/res/ai-generated-8700073_640.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/UI.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,6 +41,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory"><![CDATA[{
@@ -56,11 +73,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Main.executor": "Run",
     "Application.PopUpManager.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/yearup/DeliCapstoneProject/src/res",
+    "git-widget-placeholder": "test",
+    "last_opened_file_path": "C:/yearup/DeliCapstoneProject",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -68,6 +86,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\yearup\DeliCapstoneProject" />
       <recent name="C:\yearup\DeliCapstoneProject\src\res" />
     </key>
   </component>
@@ -96,12 +115,32 @@
       <option name="project" value="LOCAL" />
       <updated>1731521411692</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added methods for most of these classes&#10;I realized im repeating a lot of methods so that will be my next goal">
+      <option name="closed" value="true" />
+      <created>1731672253953</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731672253953</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Base Classes&#10;I have a lot of errors, fixable" />
     <MESSAGE value="fixed small mistakes, changed some classes' types&#10;I still need to add code for certain methods, trying to progress on my personal challenge" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed small mistakes, changed some classes' types&#10;I still need to add code for certain methods, trying to progress on my personal challenge" />
+    <MESSAGE value="Added methods for most of these classes&#10;I realized im repeating a lot of methods so that will be my next goal" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added methods for most of these classes&#10;I realized im repeating a lot of methods so that will be my next goal" />
   </component>
 </project>
