@@ -33,12 +33,6 @@ public class Sandwich {
     public String getSandwichSize() {
         return sandwichSize;
     }
-    public void addSauce(Sauces sauce) {
-        sauces.add(sauce);
-    }
-    public void addSide(Sides side) {
-        sides.add(side);
-    }
     public void addToppingByName(String nameOfTopping) {
         boolean isExtra = false;
         //in order to determine whether the topping has already been added to the order
@@ -87,5 +81,10 @@ public class Sandwich {
 //    }
     public double getTotalCostOfSandwich () {
         return totalCostOfSandwich;
+    }
+    @Override
+    public String toString() {
+        return sandwichSize + " sandwich on " + breadType + (isToasted ? " (toasted)" : "") +
+                " with toppings: " + toppings.toString();
     }
 }

@@ -14,6 +14,6 @@ public class Drink {
     }
     @Override
     public String toString(){
-        return "Drink: " + flavorOfDrink + ", $" + costOfDrink;
+        return "Okay dokey! " + flavorOfDrink + "! That'll be $" + costOfDrink;
     }
 }

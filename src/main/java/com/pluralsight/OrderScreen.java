@@ -12,7 +12,7 @@ import java.util.Scanner;
 //IMPORTANT: remember teachers feedback, make sure to add "break;" after switch cases.
 public class OrderScreen {
     private Order currentOrder;
-    int actualOrderNumber;
+    int actualOrderNumber = 0;
     Scanner scanner = new Scanner(System.in);
 
     public void display() {
@@ -25,11 +25,11 @@ public class OrderScreen {
             switch (choice) {
                 case 1:
                     actualOrderNumber += 1;
-                    OrderNumber orderNumber = addOrder(actualOrderNumber);
+                    addOrder(actualOrderNumber);
                     displayOrderScreen();
                     break;
                 case 0:
-                    System.out.println("Exiting the application. Goodbye!");
+                    System.out.println("fine... go :(.");
                     System.exit(0); // Exit the application completely (it wouldn't exit at first)
                 default:
                     System.out.println("That's not an option! Plz try again ^_^");
@@ -37,14 +37,18 @@ public class OrderScreen {
         }
     }
 
-    public OrderNumber addOrder(int actualOrderNumber) {
+    public Order addOrder(int actualOrderNumber) {
         scanner.nextLine();
         System.out.println("May I take your name? :3");
         String nameOfCustomer = scanner.nextLine();
         System.out.println("Thanks, " + nameOfCustomer + " :D!");
 
-        OrderNumber newOrder = new OrderNumber(actualOrderNumber, nameOfCustomer);
-        return newOrder;
+        OrderNumber orderNumber = new OrderNumber(actualOrderNumber, nameOfCustomer);
+
+        // Pass the OrderNumber to the Order constructor
+        currentOrder = new Order(orderNumber, new ArrayList<>(), new ArrayList<>(), new ArrayList<>());
+
+        return currentOrder;
     }
 
     public void displayOrderScreen() {
@@ -86,17 +90,18 @@ public class OrderScreen {
         String sandwichSizeForThisOrder;
         String breadTypeForThisOrder;
         boolean isToasted;
-        ArrayList<Topping> meatToppingListForThisOrder = new ArrayList<>();
-        ArrayList<Topping> cheeseToppingListForThisOrder = new ArrayList<>();
-        ArrayList<Topping> regularToppingListForThisOrder = new ArrayList<>();
-        ArrayList<Topping> sauceToppingListForThisOrder = new ArrayList<>();
-        ArrayList<Topping> sideListForThisOrder = new ArrayList<>();
+//        ArrayList<Topping> meatToppingListForThisOrder = new ArrayList<>();
+//        ArrayList<Topping> cheeseToppingListForThisOrder = new ArrayList<>();
+//        ArrayList<Topping> regularToppingListForThisOrder = new ArrayList<>();
+//        ArrayList<Topping> sauceToppingListForThisOrder = new ArrayList<>();
+//        ArrayList<Topping> sideListForThisOrder = new ArrayList<>();
         //ask questions here about what the user would want!
         System.out.println("Yum, okay! And what size would you like for this sandwich to be?\n" +
                 "1) 4\"\n" +
                 "2) 8\"\n" +
                 "3) 12\"\n");
         choice = scanner.nextInt();
+        scanner.nextLine();
         while (true) {
             switch (choice) {
                 case 1:
@@ -110,7 +115,8 @@ public class OrderScreen {
                     break;
                 default:
                     System.out.println("That's not an option, sorry!");
-                    choice = scanner.nextInt(); // Prompt for a valid choice
+                    choice = scanner.nextInt();
+                    scanner.nextLine();
                     continue;
             }
             break;
@@ -136,7 +142,7 @@ public class OrderScreen {
                 breadTypeForThisOrder = "Wrap";
                 break;
             default:
-                System.out.println("That's not an option, defaulting to 'White'.");
+                System.out.println("That's not an option :(... welp: defaulting to 'White'.");
                 breadTypeForThisOrder = "White";
                 break;
         }
@@ -144,12 +150,12 @@ public class OrderScreen {
                 "1) Yep!\n" +
                 "0) Nope!");
         choice = scanner.nextInt();
+        scanner.nextLine();
         isToasted = (choice == 1);
 
         Sandwich sandwich = new Sandwich(breadTypeForThisOrder, sandwichSizeForThisOrder, isToasted, new ArrayList<>());
 
 
-        do {
             System.out.println("Would you like to add meat?\n" +
                     "Steak\n" +
                     "Ham\n" +
@@ -187,8 +193,6 @@ public class OrderScreen {
                     System.out.println("Okey dokey :D!");
                     break;
             }
-        } while (choice != 0);
-
 
         System.out.println("Would you like any of these cheeses?\n" +
                 "swiss\n" +
@@ -198,9 +202,8 @@ public class OrderScreen {
                 "1) Yes\n" +
                 "0) No");
         choice = scanner.nextInt();
-
-        switch (choice) {
-            case 1:
+        scanner.nextLine();
+        if (choice == 1) {
                 scanner.nextLine();
                 System.out.println("Okay! please type in what you would like. :D");
                 String cheeseChoice = scanner.nextLine();
@@ -219,14 +222,11 @@ public class OrderScreen {
                 } else {
                     System.out.println("Okay :D");
                 }
-                break;
-            case 0:
-                System.out.println("Okey dokey :D!");
-                break;
-        } while (choice !=0);
-
+        } else if (choice == 0) {
+            System.out.println("Okey dokey :D!");
+        }
         //switch statement here
-        System.out.println("What regular toppings would you like?\n"+
+        System.out.println("Would you like any regular toppings? ^_^\n"+
                 "lettuce\n" +
                 "peppers\n" +
                 "onions\n" +
@@ -235,43 +235,43 @@ public class OrderScreen {
                 "cucumbers\n" +
                 "pickles\n" +
                 "guacamole\n" +
-                "mushrooms" +
-                "1) Yes" +
+                "mushrooms\n" +
+                "1) Yes\n" +
                 "0) No");
         choice = scanner.nextInt();
-        switch (choice) {
-            case 1:
+        scanner.nextLine();
+        if (choice == 1) {
                 scanner.nextLine();
                 System.out.println("Okay! please type in what you would like. :D");
                 String regularChoice = scanner.nextLine();
                 sandwich.addToppingByName(regularChoice);
-                break;
-            case 0:
-                System.out.println("Okey dokey :D!");
-                break;
-        } while(choice !=0);
+
+        } else if (choice == 0) {
+            System.out.println("Okey dokey :D!");
+        }
+
         //switch statement here
-        System.out.println("What kind of sauce(s) would you like?\n" +
+        System.out.println("SAUCE!!! would you like? :p \n" +
                 "mayo\n" +
                 "mustard\n" +
                 "ketchup\n" +
                 "ranch\n" +
                 "thousand islands\n" +
-                "vinaigrette");
+                "vinaigrette\n" +
+                "1) Yes\n" +
+                "0) No");
         choice = scanner.nextInt();
-        switch (choice) {
-            case 1:
-                scanner.nextLine();
-                System.out.println("Okay! please type in what you would like. :D");
-                String sauceChoice = scanner.nextLine();
-                sandwich.addToppingByName(sauceChoice);
-                break;
-            case 0:
+        if (choice == 1) {
+            scanner.nextLine();
+            System.out.println("Okay! please type in what you would like. :D");
+            String sauceChoice = scanner.nextLine();
+            sandwich.addToppingByName(sauceChoice);
+        } else if (choice == 0) {
                 System.out.println("Okey dokey :D!");
-                break;
-        } while(choice !=0);
+        }
         //switch statement here
-
+        currentOrder.addSandwich(sandwich); // Ensure the Order class has this method
+        System.out.println("Your sandwich has been added to the order! >_<");
         //use switch/if statement to make sure they dont name anything that's unavailable.
     }
 
@@ -280,8 +280,10 @@ public class OrderScreen {
         //ask questions about what size drink, what flavor, here!
         //use switch/if statement to make sure they dont name anything that's unavailable.
         //if there is an upcharge, mention it
+        scanner.nextLine();
         System.out.println("Enter what drink size you'd like pls :3 (small, medium, large): ");
         String size = scanner.nextLine();
+        scanner.nextLine();
         double price;
         switch (size.toLowerCase()) {
             case "small":
@@ -298,7 +300,9 @@ public class OrderScreen {
                 return;
         }
         System.out.print("What flavor would you like?");
+        System.out.println(" ");
         String flavorOfDrink = scanner.nextLine();
+        scanner.nextLine();
         Drink drink = new Drink(flavorOfDrink, price);
         currentOrder.addDrink(drink);
         System.out.println(drink.toString());
@@ -308,6 +312,7 @@ public class OrderScreen {
     public void processAddChips() {
         //ask what flavor! (out of available options if i feel like making any)
         //use switch/if statement to make sure they dont name anything that's unavailable.
+        scanner.nextLine();
         System.out.println("What chips would you like?: ");
         String flavorOfChips = scanner.nextLine();
         Chips oneChipBag = new Chips(flavorOfChips);
@@ -317,26 +322,21 @@ public class OrderScreen {
     public void processCheckout() {
         int checkoutChoice;
         System.out.println("Okey dokey! This is it!:D");
-        do {
             currentOrder.displayOrderSummary();
             System.out.println(currentOrder.toString());
 
             System.out.println("Are you super duper suuuure this is what you wanted :3?\n" +
                     "Yes - 1\n" +
                     "No - 0");
-            checkoutChoice = scanner.nextInt();
-            switch (checkoutChoice) {
-                case 1:
-                    receipt(currentOrder);
-                    System.out.println("Thank you for ordering here >_< have a great day :3!!!");
-
-//ss
-                    //IMPORTANT:find out how you're gonna end the code here
-                case 0:
-                    System.out.println("silly goose :3");
-                    break;
+            int checkoutChoice1 = scanner.nextInt();
+            if (checkoutChoice1 == 1) {
+                receipt(currentOrder);
+                System.out.println("Thank you for ordering here >_< have a great day :3!!!");
+                System.exit(0);
+            } else if (checkoutChoice1 == 0) {//ss
+                //IMPORTANT:find out how you're gonna end the code here
+                System.out.println("silly goose :3");
             }
-        } while (checkoutChoice != 0);
     }
         private void receipt(Order order) {
             String folderName = "receipts";

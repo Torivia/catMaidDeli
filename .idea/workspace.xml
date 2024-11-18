@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="deae9907-a140-47f4-b0e9-31668ecf01ab" name="Changes" comment="commits didnt go through?">
-      <change afterPath="$PROJECT_DIR$/receipts/20241114-153244.txt" afterDir="false" />
+    <list default="true" id="deae9907-a140-47f4-b0e9-31668ecf01ab" name="Changes" comment="repeat commit to make sure it committed: making a branch, changed up the dialog, and found out how to call a new premiumToppping&#10;honestly should've learned how to earlier">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Drink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Drink.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/OrderScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/OrderScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/PremiumTopping.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/PremiumTopping.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sandwich.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pluralsight/Sandwich.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pluralsight/SandwichOrderManager.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,18 +31,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Torivia"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Torivia&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Torivia/catMaidDeli.git",
-    "accountId": "a22a9718-71a5-4a4d-a3ed-293e66ebdc47"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Torivia/catMaidDeli.git&quot;,
+    &quot;accountId&quot;: &quot;a22a9718-71a5-4a4d-a3ed-293e66ebdc47&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -58,12 +56,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "Application.PopUpManager.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "test",
-    "last_opened_file_path": "C:/yearup/DeliCapstoneProject",
+    "last_opened_file_path": "C:/yearup/DeliCapstoneProject/src/res",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -71,7 +69,6 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\yearup\DeliCapstoneProject" />
       <recent name="C:\yearup\DeliCapstoneProject\src\res" />
     </key>
   </component>
@@ -100,52 +97,12 @@
       <option name="project" value="LOCAL" />
       <updated>1731521411692</updated>
     </task>
-    <task id="LOCAL-00003" summary="Added methods for most of these classes&#10;I realized im repeating a lot of methods so that will be my next goal">
-      <option name="closed" value="true" />
-      <created>1731672253953</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1731672253953</updated>
-    </task>
-    <task id="LOCAL-00004" summary="commits didnt go through?">
-      <option name="closed" value="true" />
-      <created>1731685678796</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1731685678796</updated>
-    </task>
-    <option name="localTasksCounter" value="5" />
+    <option name="localTasksCounter" value="3" />
     <servers />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Base Classes&#10;I have a lot of errors, fixable" />
     <MESSAGE value="fixed small mistakes, changed some classes' types&#10;I still need to add code for certain methods, trying to progress on my personal challenge" />
-    <MESSAGE value="Added methods for most of these classes&#10;I realized im repeating a lot of methods so that will be my next goal" />
-    <MESSAGE value="commits didnt go through?" />
-    <option name="LAST_COMMIT_MESSAGE" value="commits didnt go through?" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/pluralsight/OrderScreen.java</url>
-          <line>151</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="fixed small mistakes, changed some classes' types&#10;I still need to add code for certain methods, trying to progress on my personal challenge" />
   </component>
 </project>

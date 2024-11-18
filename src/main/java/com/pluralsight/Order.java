@@ -37,7 +37,20 @@ public class Order {
     }
 
     public void displayOrderSummary() {
-        //do stuff
+        System.out.println("Ur Order Summary U_U:");
+        System.out.println("Order Number: " + orderNumber.getActualNumOfOrder());
+        System.out.println("Customer Name: " + orderNumber.getNameOfCustomer());
+        for (Sandwich sandwich : sandwiches) {
+            System.out.println(sandwich.toString()); // Ensure Sandwich has a meaningful toString()
+        }
+
+        for (Drink drink : drinks) {
+            System.out.println(drink.toString());
+        }
+
+        for (Chips chip : chips) {
+            System.out.println(chip.toString());
+        }
     }
 
     private double getTotalCost() {
